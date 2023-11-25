@@ -1,0 +1,57 @@
+.formInput {
+
+    input {
+        background-color: #292929;
+        color: #fff;
+        padding: 1rem;
+
+        width: 30vw;
+
+        border: none;
+        margin-bottom: 1.25rem;
+        border-radius: 4px;
+
+        &:focus {
+            outline: 1px solid #454545;
+        }
+
+        &.error {
+            border: 1px solid #FF0000;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    p {
+        color: #FF0000;
+        margin: 0 0 0.75rem 0;
+    }
+}
+
+.formInput {
+    font-size: 16px;
+    font-family: var(--dm-sans-font);
+    font-weight: 400;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 0.75rem;
+    margin: 0.25rem 0;
+
+    input {
+        width: 17px;
+        height: 17px;
+
+        accent-color: var(--green);
+        margin-bottom: 0;
+    }
+
+    label {
+        font-size: 16px;
+        color: #7C7C7C;
+    }
+}

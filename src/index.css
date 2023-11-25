@@ -1,0 +1,21 @@
+:root {
+    --roboto-font: 'Roboto', sans-serif;
+    --dm-sans-font: 'DM Sans', sans-serif;
+    --single-day-font: 'Single Day', cursive;
+
+    --green: #72DB73;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+
+    font-family: var(--roboto-font);
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
