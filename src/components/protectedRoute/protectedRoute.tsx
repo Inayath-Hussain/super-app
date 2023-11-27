@@ -1,9 +1,17 @@
-import { redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { isUserSignedIn } from "../../localStorage/signUp";
+import { useEffect } from 'react';
 
 
 const ProtectedRoute: React.FC<React.PropsWithChildren> = ({ children }) => {
-    // if user is signed in then display page
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        // if user is not signed in then redirect to registeration page
+        if (!isUserSignedIn()) navigate('/register')
+    }, [])
+
+    console.log(isUserSignedIn())
     if (isUserSignedIn()) {
         return (
             <>
@@ -12,8 +20,6 @@ const ProtectedRoute: React.FC<React.PropsWithChildren> = ({ children }) => {
         );
     }
 
-    // if user is not signed in then redirect to registeration page
-    redirect('/register')
 
 }
 
