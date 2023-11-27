@@ -1,0 +1,13 @@
+.category-layout {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 40vw 50vw;
+    padding: 5vh 5vw;
+
+    place-items: start;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
