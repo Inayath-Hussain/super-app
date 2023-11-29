@@ -4,6 +4,7 @@ import SelectedCategory from '../../components/category/selectedCategory';
 import './category.scss'
 import CategoryOptions from '@/components/category/categoryOptions';
 import { saveCategoriesToLS } from '@/localStorage/categories';
+import { homeRoute } from '@/route';
 
 export type ICategories = 'Action' | 'Drama' | 'Romance' | 'Thriller' | 'Western' | 'Horror' | 'Fantasy' | 'Music' | 'Fiction'
 
@@ -34,7 +35,7 @@ const CategoryPage = () => {
 
             saveCategoriesToLS(selectedCategories)
 
-            navigate('/')
+            navigate(homeRoute)
 
             return setShowMinimumError(false)
         }

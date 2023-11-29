@@ -1,7 +1,14 @@
+import { IFormState } from "@/pages/registeration/registeration"
+
 const key = 'userData'
 
-export const getUserData = () => {
-    return localStorage.getItem(key)
+export const getUserData = (): IFormState | null => {
+    const data = localStorage.getItem(key)
+    if (data) {
+        return JSON.parse(data)
+    }
+
+    return null
 }
 
 export const isUserSignedIn = () => {

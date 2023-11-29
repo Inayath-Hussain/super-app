@@ -3,6 +3,8 @@ import FormInput, { ITypes } from '../../components/formInput/formInput';
 import RegisterationBanner from '../../components/registerationBanner/registerationBanner';
 import { saveUserData } from '../../localStorage/signUp'
 import './registeration.scss'
+import { useNavigate } from 'react-router-dom';
+import { categoryRoute } from '@/route';
 
 interface IFormData<T> {
     name: T
@@ -32,6 +34,8 @@ const errorsInitialValue: IFormError = {
 }
 
 const RegisterationPage = () => {
+
+    const navigate = useNavigate();
 
     const [formValues, setFormValues] = useState<IFormState>({
         name: '',
@@ -114,9 +118,9 @@ const RegisterationPage = () => {
         // if no error save to local storage
         if (isValid) {
             // save to LS
-            console.log('valid')
-
             saveUserData(formValues)
+
+            navigate(categoryRoute)
         }
     }
 

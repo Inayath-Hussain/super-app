@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.home-layout {
+    height: 100vh;
+
+    padding: 3vh 3vh 1vh;
+
+    display: grid;
+    // grid-template: 1fr 1fr 1fr 1fr 1fr/1fr 1fr 1fr;
+    grid-template:
+        "profile notes news" 1fr
+        "profile notes news" 1fr
+        "weather notes news" 1.25fr
+        "timer timer news" 0.75fr
+        "timer timer news" 1fr
+        ". . button" 7vh / 1.2fr 0.8fr 1fr;
+    column-gap: 4vh;
+    row-gap: 2vh;
+
+    box-sizing: border-box;
+}
