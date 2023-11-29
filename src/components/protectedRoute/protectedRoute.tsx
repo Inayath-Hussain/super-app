@@ -1,24 +1,36 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, Navigate } from 'react-router-dom'
 import { isUserSignedIn } from "../../localStorage/signUp";
-import { useEffect } from 'react';
+import { getSavedCategories } from '@/localStorage/categories';
+import { categoryRoute, registerRoute } from '@/route';
 
 
 const ProtectedRoute: React.FC<React.PropsWithChildren> = ({ children }) => {
-    const navigate = useNavigate()
 
-    useEffect(() => {
-        // if user is not signed in then redirect to registeration page
-        if (!isUserSignedIn()) navigate('/register')
-    }, [])
+    const { pathname } = useLocation();
+
+    const signInStatus = isUserSignedIn()
+    const categories = getSavedCategories()
 
     console.log(isUserSignedIn())
-    if (isUserSignedIn()) {
+
+    if (!signInStatus) {
         return (
-            <>
-                {children}
-            </>
-        );
+            <Navigate to={registerRoute} />
+        )
     }
+
+    if (pathname !== categoryRoute && categories === null) {
+        return (
+            <Navigate to={categoryRoute} />
+        )
+    }
+
+
+    return (
+        <>
+            {children}
+        </>
+    )
 
 
 }
