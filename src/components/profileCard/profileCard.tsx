@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { IFormState } from "@/pages/registeration/registeration";
 import { ICategories } from "@/pages/category/category";
-import { getUserData } from "@/localStorage/signUp"
-import { getSavedCategories } from "@/localStorage/categories"
+import { getUserData } from "@/utilities/localStorage/signUp"
+import { getSavedCategories } from "@/utilities/localStorage/categories"
 import profileImg from "@/assets/profileImg.png"
 import "./profileCard.scss"
 

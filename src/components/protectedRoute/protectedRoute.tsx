@@ -1,6 +1,6 @@
 import { useLocation, Navigate } from 'react-router-dom'
-import { isUserSignedIn } from "../../localStorage/signUp";
-import { getSavedCategories } from '@/localStorage/categories';
+import { isUserSignedIn } from "../../utilities/localStorage/signUp";
+import { getSavedCategories } from '@/utilities/localStorage/categories';
 import { categoryRoute, registerRoute } from '@/route';
 
 

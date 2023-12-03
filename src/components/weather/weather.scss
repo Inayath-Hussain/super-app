@@ -1,0 +1,148 @@
+@import "../../variables";
+
+@mixin items-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1.1vh;
+}
+
+
+@mixin third-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.weather-layout {
+    grid-area: weather;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    border-radius: 1rem;
+
+    font-family: $roboto-font;
+
+    height: 100%;
+
+    .time {
+        background-color: #FF4ADE;
+
+        font-weight: 600;
+        font-size: 1.5rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        padding: 0.5rem 0;
+
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+    .weather {
+        background-color: #101744;
+
+        height: 100%;
+        // padding: 10px 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+
+        font-weight: 400;
+    }
+
+    .condition {
+        @include items-display;
+
+        img {
+            height: 50%;
+        }
+
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+
+            height: 50%;
+            width: 2px;
+            background: #fff;
+
+            top: 25%;
+            right: 0;
+        }
+    }
+
+    .temp-and-pressure {
+        @include items-display;
+
+        // @include right-border(2px);
+
+        h2 {
+            margin: 0;
+            font-weight: 400;
+            font-size: 4vh;
+        }
+
+        .pressure {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            gap: 0.9rem;
+            width: 80%;
+
+            font-size: 0.9rem;
+        }
+
+    }
+
+    .wind-and-humidity {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+
+            background: #fff;
+
+            left: 0;
+            top: 25%;
+
+            height: 50%;
+            width: 2px
+        }
+
+        @include items-display;
+
+        font-size: 0.9rem;
+
+        .wind {
+            @include third-item;
+        }
+
+        .humidity {
+            @include third-item;
+
+            img {
+                width: 2.6vh;
+                height: 3vh;
+            }
+        }
+    }
+}

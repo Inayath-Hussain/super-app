@@ -1,6 +1,6 @@
 import './selectedCategory.scss'
 import { ICategories } from '@/pages/category/category';
-import errorIcon from "@/assets/icons/Vector.svg"
+import errorIcon from "@/assets/icons/error-icon.svg"
 
 interface Iprops {
     selectedCategories: ICategories[]

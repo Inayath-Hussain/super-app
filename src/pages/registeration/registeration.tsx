@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import FormInput, { ITypes } from '../../components/formInput/formInput';
 import RegisterationBanner from '../../components/registerationBanner/registerationBanner';
-import { saveUserData } from '../../localStorage/signUp'
+import { saveUserData } from '../../utilities/localStorage/signUp'
 import './registeration.scss'
 import { useNavigate } from 'react-router-dom';
 import { categoryRoute } from '@/route';
