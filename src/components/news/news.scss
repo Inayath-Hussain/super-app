@@ -1,0 +1,108 @@
+.news-layout {
+
+    grid-area: news;
+
+    // height: 100%;
+    border-radius: 1rem;
+
+    background-color: #323232;
+
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+
+
+    .image-and-title {
+        height: 66%;
+
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+
+        height: 100%;
+
+        position: relative;
+
+        img {
+            height: inherit;
+            width: 100%;
+
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+
+        }
+
+        .title-section {
+            position: absolute;
+            bottom: 0;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            background: rgba(0, 0, 0, 0.6);
+
+            padding: 0.8rem 1.1rem;
+
+            .title {
+                color: #fff;
+                opacity: 1;
+
+                font-size: 1.3rem;
+            }
+
+            .published-at {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                font-size: 0.8rem;
+
+                p:nth-child(1) {
+                    position: relative;
+
+                    padding-right: 0.5rem;
+                }
+
+                p:nth-child(1)::after {
+                    content: "";
+                    height: 70%;
+                    width: 1px;
+
+                    background-color: #fff;
+
+                    position: absolute;
+                    right: 0;
+
+                    top: 15%;
+                }
+
+                p:nth-child(2) {
+                    padding-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .content {
+        background-color: #fff;
+        color: #000;
+
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+
+        padding: 1.1rem 1.2rem;
+
+        height: 100%;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        p {
+            font-weight: 400;
+
+            line-height: 2rem;
+        }
+    }
+}

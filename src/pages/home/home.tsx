@@ -1,6 +1,7 @@
 import ProfileCard from "@/components/profileCard/profileCard";
 import "./home.scss";
 import Weather from "@/components/weather/weather";
+import News from "@/components/news/news";
 
 const HomePage = () => {
 
@@ -8,7 +9,7 @@ const HomePage = () => {
         <main className="home-layout">
             <ProfileCard />
             <div style={{ gridArea: 'notes', background: 'orange' }}>Notes</div>
-            <div style={{ gridArea: 'news', background: 'aliceblue' }}>NEWS</div>
+            <News />
             <Weather />
             <div style={{ gridArea: 'timer', background: 'green' }}>timer</div>
             <div style={{ gridArea: 'button', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
