@@ -2,13 +2,14 @@ import ProfileCard from "@/components/profileCard/profileCard";
 import "./home.scss";
 import Weather from "@/components/weather/weather";
 import News from "@/components/news/news";
+import Notes from "@/components/notes/notes";
 
 const HomePage = () => {
 
     return (
         <main className="home-layout">
             <ProfileCard />
-            <div style={{ gridArea: 'notes', background: 'orange' }}>Notes</div>
+            <Notes />
             <News />
             <Weather />
             <div style={{ gridArea: 'timer', background: 'green' }}>timer</div>

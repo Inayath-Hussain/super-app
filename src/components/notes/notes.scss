@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.notes-layout {
+    grid-area: notes;
+
+    border-radius: 1rem;
+
+    background: #F1C75B;
+
+    padding: 1rem 0.4rem 1rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    color: #000;
+
+
+    label {
+        margin: 0;
+        margin-bottom: 1rem;
+
+        font-weight: 600;
+        font-size: 1.7rem;
+
+    }
+
+    textarea {
+        resize: none;
+
+        background: transparent;
+
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+
+        font-family: $roboto-font;
+        font-size: 1rem;
+        line-height: 1.5rem;
+
+        padding-right: 0.5rem;
+
+        border: none;
+        outline: none;
+
+        &::-webkit-scrollbar {
+            background: transparent;
+            border-radius: 1rem;
+            width: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #FFE6A6;
+
+            border-radius: 1rem;
+        }
+    }
+}
