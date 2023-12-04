@@ -1,13 +1,17 @@
-type Imeridiem = 'am' | 'pm'
+type Imeridiem = 'AM' | 'PM'
 
-export const getCurrentDateTime = () => {
-    const currentTime = new Date();
-    const date = `${currentTime.getMonth()}-${currentTime.getDate()}-${currentTime.getFullYear()}`
+/**
+ * 
+ * @returns date in dd-mm-yyyy format and time in 12hr format
+ */
+export const getDateAndTime = (dateObj: Date = new Date()) => {
 
-    let hour = currentTime.getHours()
-    let minutes: number | string = currentTime.getMinutes()
-    let seconds = currentTime.getSeconds()
-    let meridiem: Imeridiem = 'am'
+    const date = `${dateObj.getMonth() + 1}-${dateObj.getDate()}-${dateObj.getFullYear()}`
+
+    let hour = dateObj.getHours()
+    let minutes: number | string = dateObj.getMinutes()
+    let seconds = dateObj.getSeconds()
+    let meridiem: Imeridiem = 'AM'
 
     if (hour === 0) {
         hour = 12
@@ -15,7 +19,7 @@ export const getCurrentDateTime = () => {
 
     if (hour > 12) {
         hour -= 12
-        meridiem = 'pm'
+        meridiem = 'PM'
     }
 
     hour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour

@@ -1,4 +1,4 @@
-import { getCurrentDateTime } from "@/utilities/dateTime/dateTime";
+import { getDateAndTime } from "@/utilities/dateTime/dateTime";
 import { Dispatch, SetStateAction } from "react";
 
 interface Iparams {
@@ -19,7 +19,7 @@ const useWatch = ({ setDate, setTime }: Iparams) => {
     const subscribe = () => {
 
         const call = () => {
-            const { date: d, time: t, seconds } = getCurrentDateTime()
+            const { date: d, time: t, seconds } = getDateAndTime()
             setDate(d)
             setTime(t)
 
