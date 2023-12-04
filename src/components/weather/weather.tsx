@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import "./weather.scss";
 import useWatch from "@/hooks/useWatch";
-import useWeather from "@/hooks/useWeather";
+import useWeatherApi from "@/hooks/useWeather";
 import pressureIcon from "@/assets/icons/pressure-icon.svg";
 import windIcon from "@/assets/icons/wind-icon.svg"
 import humidityIcon from "@/assets/icons/humidity-icon.svg"
 
 const Weather = () => {
 
-    const { isLoading, data } = useWeather();
+    const { isLoading, data } = useWeatherApi();
 
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
@@ -35,7 +35,7 @@ const Weather = () => {
             </div>
 
             <div className="weather">
-                {data &&
+                {data !== null &&
                     <>
                         {/* weather status icon and text */}
                         <div className="condition">

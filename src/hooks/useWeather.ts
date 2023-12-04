@@ -1,4 +1,4 @@
-import { getLocation, getLocationQueryString } from "@/utilities/location/getLocation";
+import { getWeatherData } from "@/services/weatherApi";
 import { useEffect, useState } from "react";
 
 interface Idata {
@@ -16,33 +16,31 @@ interface Idata {
     }
 }
 
+export type Iweather = Idata | null
+
 /**
  * provides weather data and loader status
  */
-const useWeather = () => {
+const useWeatherApi = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState<Idata | null>(null);
+    const [data, setData] = useState<Iweather>(null);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const call = async () => {
+
             setIsLoading(true)
+            const d = await getWeatherData()
 
-            let userLocation = await getLocation()
-
-            const result = await fetch(`http://localhost:3000/api/weather?${userLocation ? getLocationQueryString(userLocation) : ""}`, {
-                method: "GET"
-            })
-
-            console.log(result)
-
-
-            result.json().then((data) => {
-                console.log(data)
-                setData(data)
+            if (d === null) {
                 setIsLoading(false)
-            })
-
-
+                setError(true)
+                return
+            }
+            else {
+                setIsLoading(false)
+                setData(d)
+            }
         }
 
         call()
@@ -52,8 +50,9 @@ const useWeather = () => {
 
     return {
         isLoading,
-        data
+        data,
+        error
     }
 }
 
-export default useWeather;
+export default useWeatherApi;
