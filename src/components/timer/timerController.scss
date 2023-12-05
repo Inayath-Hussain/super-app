@@ -1,0 +1,32 @@
+.timer-controller-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.9rem;
+
+    height: 100%;
+    width: 50%;
+}
+
+.timer-buttons-section {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.play-button {
+    background: #FF6A6A;
+
+    width: 100%;
+
+    padding: 0.7rem 0;
+    box-sizing: border-box;
+
+    color: #fff;
+
+    font-size: 1rem;
+    border-radius: 1rem;
+}

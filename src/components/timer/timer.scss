@@ -1,0 +1,14 @@
+.timer-layout {
+    background: #1E2343;
+
+    grid-area: timer;
+
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}

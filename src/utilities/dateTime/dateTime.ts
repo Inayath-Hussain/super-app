@@ -1,7 +1,8 @@
+import { prependZero } from "./prePendZero"
+
 type Imeridiem = 'AM' | 'PM'
 
 /**
- * 
  * @returns date in dd-mm-yyyy format and time in 12hr format
  */
 export const getDateAndTime = (dateObj: Date = new Date()) => {
@@ -24,11 +25,7 @@ export const getDateAndTime = (dateObj: Date = new Date()) => {
 
     hour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour
 
-    if (minutes < 10) {
-        minutes = '0' + minutes
-    }
-
-    const time = `${hour}:${minutes} ${meridiem}`
+    const time = `${prependZero(hour)}:${prependZero(minutes)} ${meridiem}`
 
 
     // time and seconds

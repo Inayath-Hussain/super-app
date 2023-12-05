@@ -3,6 +3,7 @@ import "./home.scss";
 import Weather from "@/components/weather/weather";
 import News from "@/components/news/news";
 import Notes from "@/components/notes/notes";
+import Timer from "@/components/timer/timer";
 
 const HomePage = () => {
 
@@ -12,7 +13,7 @@ const HomePage = () => {
             <Notes />
             <News />
             <Weather />
-            <div style={{ gridArea: 'timer', background: 'green' }}>timer</div>
+            <Timer />
             <div style={{ gridArea: 'button', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
                 <button style={{ padding: '0.75rem 1.5rem' }}>Browse</button>
             </div>
