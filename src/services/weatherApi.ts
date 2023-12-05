@@ -5,7 +5,7 @@ export const getWeatherData = async (): Promise<Iweather> => {
     try {
         let userLocation = await getLocation()
 
-        const result = await fetch(`http://localhost:3000/api/weather?${userLocation ? getLocationQueryString(userLocation) : ""}`, {
+        const result = await fetch(`${import.meta.env.VITE_API_ORIGIN}/api/weather?${userLocation ? getLocationQueryString(userLocation) : ""}`, {
             method: "GET"
         })
 
