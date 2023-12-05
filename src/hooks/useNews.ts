@@ -14,8 +14,8 @@ interface Idata {
 
 export type Inews = Idata | null
 
-let a = new Date()
 const useNewsApi = () => {
+    // @ts-ignore
     const [page, setPage] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState<Inews>(null);

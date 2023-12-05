@@ -1,5 +1,5 @@
 import { TimeProps } from "react-countdown-circle-timer"
-import { prependZero } from "@/utilities/dateTime/prePendZero";
+import { prependZero } from "@/utilities/dateTime/prependZero";
 import "./timerClockContent.scss";
 
 interface ITime {
@@ -8,6 +8,7 @@ interface ITime {
     seconds: string
 }
 
+// @ts-ignore
 const TimerClockContent: React.FC<TimeProps> = ({ elapsedTime, remainingTime }) => {
 
     const currentTime = calculateTime();

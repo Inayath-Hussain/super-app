@@ -1,7 +1,7 @@
 import { memo } from "react";
 import IncreaseButton from "@/assets/icons/increase-button.svg";
 import DecreaseButton from "@/assets/icons/decrease-button.svg";
-import { prependZero } from "@/utilities/dateTime/prePendZero";
+import { prependZero } from "@/utilities/dateTime/prependZero";
 import "./timerButton.scss";
 
 export type IButtonOperators = "increase" | "decrease"

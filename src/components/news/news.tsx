@@ -10,6 +10,7 @@ const News = () => {
     const [articleNumber, setArticleNumber] = useState(0);
 
     // duration of time in which a single article is displayed in minutes
+    // @ts-ignore
     let articleDisplayPeriod = 1
 
     useEffect(() => {

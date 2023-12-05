@@ -1,4 +1,4 @@
-import { prependZero } from "./prePendZero"
+import { prependZero } from "./prependZero"
 
 type Imeridiem = 'AM' | 'PM'
 
