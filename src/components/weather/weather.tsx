@@ -8,6 +8,7 @@ import humidityIcon from "@/assets/icons/humidity-icon.svg"
 
 const Weather = () => {
 
+    // @ts-ignore
     const { isLoading, data } = useWeatherApi();
 
     const [date, setDate] = useState('')
