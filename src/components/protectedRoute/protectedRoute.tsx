@@ -11,8 +11,6 @@ const ProtectedRoute: React.FC<React.PropsWithChildren> = ({ children }) => {
     const signInStatus = isUserSignedIn()
     const categories = getSavedCategories()
 
-    console.log(isUserSignedIn())
-
     if (!signInStatus) {
         return (
             <Navigate to={registerRoute} />

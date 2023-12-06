@@ -1,0 +1,64 @@
+@import "../../variables";
+
+.browse-page-layout {
+    // height: 100vh;
+    padding: 1.5rem 2.5rem;
+
+    box-sizing: border-box;
+
+    .icon-and-pic {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        width: 100%;
+
+        p {
+            font-family: $singleDayFont;
+            color: $green;
+            font-weight: 400;
+            font-size: 2.5rem;
+        }
+
+        img {
+            height: 5rem;
+            width: 5rem;
+
+        }
+
+    }
+
+    .text {
+        text-align: left;
+
+        font-family: $roboto-font;
+        font-weight: 600;
+        font-size: 1.4rem;
+
+    }
+
+    .additional-padding {
+        width: 100%;
+        padding: 0 1.4rem;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
+
+
+.browse-categories-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: row;
+
+    gap: 3rem;
+
+    width: 100%;
+}

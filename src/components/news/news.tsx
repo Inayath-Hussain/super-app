@@ -1,7 +1,7 @@
-import useNewsApi from "@/hooks/useNews";
-import "./news.scss";
 import { useEffect, useState } from "react";
+import useNewsApi from "@/hooks/useNews";
 import { getDateAndTime } from "@/utilities/dateTime/dateTime";
+import "./news.scss";
 
 
 
@@ -10,8 +10,7 @@ const News = () => {
     const [articleNumber, setArticleNumber] = useState(0);
 
     // duration of time in which a single article is displayed in minutes
-    // @ts-ignore
-    let articleDisplayPeriod = 1
+    let articleDisplayPeriod = 2
 
     useEffect(() => {
         let intervalID = setInterval(() => {
@@ -20,15 +19,14 @@ const News = () => {
 
                 // check if the next articleNumber exceeds total article size
                 if (data.articles.length <= articleNumber + 1) {
-                    console.log("FETCH AGAIN");
+                    // console.log("FETCH AGAIN");
                 }
                 else {
-                    console.log(articleNumber)
                     setArticleNumber(prev => prev + 1);
                 }
             }
 
-        }, 10 * 1000)
+        }, articleDisplayPeriod * 10 * 1000)
 
         return () => {
             clearInterval(intervalID)

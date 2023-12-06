@@ -24,14 +24,12 @@ const useWatch = ({ setDate, setTime }: Iparams) => {
             setTime(t)
 
             let timeoutInSec = 60 - seconds
-            console.log(timeoutInSec)
 
             id = setTimeout(() => {
                 console.log('call')
                 call();
             }, timeoutInSec * 1000)
 
-            console.log('subscribe id', id)
         }
 
         call()
@@ -39,7 +37,6 @@ const useWatch = ({ setDate, setTime }: Iparams) => {
     }
 
     const unSubscribe = () => {
-        console.log('unsubscribe id', id)
         clearTimeout(id)
     }
 

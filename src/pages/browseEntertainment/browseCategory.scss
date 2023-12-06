@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.browse-section-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 1rem;
+}
+
+.category-title {
+    font-family: $roboto-font;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #878787;
+}
+
+.browse-images-layout {
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // gap: 3vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    img {
+        width: 21vw;
+        border-radius: 1rem;
+    }
+}
+
+.status {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 500;
+
+    text-align: center;
+}
