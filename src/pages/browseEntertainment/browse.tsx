@@ -5,6 +5,7 @@ import { ICategories } from "../category/category";
 import { getSavedCategories } from "@/utilities/localStorage/categories";
 import BrowseCategory from "./browseCategory";
 import "./browse.scss";
+import { homeRoute } from "@/route";
 
 const BrowsePage = () => {
     const [userCategories] = useState<ICategories[] | null>(getSavedCategories());
@@ -17,7 +18,7 @@ const BrowsePage = () => {
             <div className="icon-and-pic">
                 <p>Super app</p>
 
-                <Link to={"/"}>
+                <Link to={homeRoute}>
                     <img src={profileIcon} alt="" />
                 </Link>
             </div>
